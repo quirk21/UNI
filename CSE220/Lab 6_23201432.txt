@@ -1,0 +1,76 @@
+Task 01
+
+def LCA(root, x, y):
+    #To Do
+    if root == None:
+        return 
+    
+    if root.elem > x and root.elem > y :
+        return LCA(root.left,x,y)
+    
+    if root.elem < x and root.elem < y :
+        return LCA(root.right,x,y)
+
+    return root.elem
+============================================
+
+Task 02
+
+def find_path(root, key):
+    #To Do
+    new = []
+    def find(root, key):
+        if root == None:
+            return False
+        
+        new.append(root.elem)
+        if root.elem == key:
+            return True
+        
+        if find(root.left, key) or find(root.right, key):
+            return True
+        
+        new.pop()
+
+        return False
+    
+    if find(root, key):
+        return new
+    return "No path found."
+=============================================================
+
+Task 03
+
+def sum_of_leaves(root, sum):
+    #To Do
+    if root == None:
+        return sum
+    if root.left == None and root.right == None:
+        sum += root.elem
+        return sum
+     
+    return sum + sum_of_leaves(root.left, sum) +  sum_of_leaves(root.right, sum)
+====================================================================================
+
+Task 04
+
+def inorder_predecessor(root, x):
+    #To Do
+
+    def inorder(root, x, prev):
+
+        if root is None:
+            return prev
+
+        if root.elem < x.elem:
+            return inorder(root.right, x, root)
+        
+        else:
+            if root.elem > prev.elem:
+                return inorder(root.left, x, prev)
+            else:
+                return inorder(root.left, x, root)
+
+
+    return inorder(root, x, root)
+===========================================================================

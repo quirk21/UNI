@@ -1,0 +1,119 @@
+Task 01
+
+def convert_mirror(root):
+    #To Do
+    if root == None:
+        return
+    left = root.left
+    right = root.right
+
+    root.left = right
+    root.right = left
+    convert_mirror(root.left)
+    convert_mirror(root.right)
+    
+    return root
+===============================
+
+
+Task 02
+
+def smallest_level(root, level = {}, i = 0):
+    #To Do 
+    if root == None:
+        return
+    
+    if i not in level.keys():
+        level[i] = root.elem
+    else:
+        level[i] = level[i] if level[i] < root.elem else root.elem
+    
+    smallest_level(root.left,level,i + 1)
+    smallest_level(root.right,level,i + 1)
+   
+
+    return level
+==============================================
+
+Task 03
+
+def sumTree(root):
+
+    # To DO
+    #you can declare as many helper function with extra parameters as you need .
+    #You can not modify the parameters of sumTree or modify any part of the given code.
+
+    return new_sum_func(root)
+
+def new_sum_func(root, count = 0, i = 0 ):
+    if root == None:
+        return count
+    if i == 0:
+        count += root.elem
+    else:
+        count += root.elem % i
+
+    
+    count = new_sum_func(root.left, count , i + 1)
+    count = new_sum_func(root.right, count , i + 1)
+
+    return count
+=====================================================
+
+Task04
+
+def swap_child(root, level, M):
+    #To Do
+    return new_swap(root, level, M)
+
+def new_swap(root, start, end, count = 0):
+
+    if start >= end or root == None:
+        return
+
+    if start <= count < end:
+        left = root.left
+        right = root.right
+        root.left = right
+        root.right = left
+
+    new_swap(root.left, start, end, count + 1)
+    new_swap(root.right, start, end, count + 1)
+
+    return root
+==============================================
+
+Task 05
+
+def subtract_summation(root):
+    #To Do
+    left = sum_tree(root.left)
+    right = sum_tree(root.right)
+    return (left - right)
+
+def sum_tree(root):
+    if root == None:
+        return 0
+
+    return root.elem + sum_tree(root.left) + sum_tree(root.right)
+=================================================================
+
+Task 06
+
+def level_sum(root):
+    #To Do
+    return new_sum_func(root)
+    
+def new_sum_func(root, count = 0, i = 0):
+    if root == None:
+        return count
+    if count % 2 == 0:
+        count += root.elem
+    else:
+        count -= root.elem
+
+    count = new_sum_func(root.left, count, i + 1)
+    count = new_sum_func(root.right, count, i + 1)
+
+    return count
+=====================================================

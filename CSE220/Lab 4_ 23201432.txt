@@ -1,0 +1,152 @@
+Task 01
+def __hash_function(self, brand):
+    index = 0
+    for i in brand:
+      index += ord(i)
+
+    index %= len(self.vehicleTable)
+
+    # Do not discard the next 3 lines
+    if index in self.empty_slot:
+      del self.empty_slot[index]
+    return index
+
+  # Do it by yourself
+
+  def insert_vehicle(self, vehicle):
+    # TO DO
+    new = vehicleNodes(vehicle[0], vehicle[1], vehicle[2], vehicle[3])
+    idx = self.__hash_function(new.brand)
+    if self.vehicleTable[idx] == None:
+      self.vehicleTable[idx] = new
+
+    else:
+      if self.vehicleTable[idx].brand == new.brand:
+        self.vehicleTable[idx].next = new
+      else:
+        slot = self.find_empty_slot()
+        self.vehicleTable[slot] = new
+
+    return self.vehicleTable
+
+
+============
+task 02
+def __hash_function(self, key):
+    #TO DO
+    if len(key)%2 != 0:
+      key += 'N'
+
+    value = 0
+    for i in range(len(key),2):
+      value += int(str(ord(key[i])) + str(ord(key[i+1])))
+    
+    value %= len(self.ht)
+
+    return value
+
+
+  # Do it by yourself
+
+
+  def search_hashtable(self, s):
+    # TO DO
+    index = self.__hash_function(s[0])
+    if self.ht[index] != None:
+
+      if self.ht[index].key == s[0]:
+        return "Found"
+      else:
+        head = self.ht[index]
+        while head.next != None:
+          head = head.next
+          if head.key == s[0]:
+            return "Found"
+
+    return "Not Found"
+=====================
+
+task 03
+
+def __hash_function(self, key):
+    #TO DO
+    index = 0
+    if len(key) % 2 == 0:
+      for i in range(0,len(key),2):
+        index += ord(key[i])
+    
+    else:
+      for i in range(1,len(key),2):
+        index += ord(key[i])
+
+    index = index % len(self.ht)
+    
+    return index 
+
+
+
+  #Do it by yourself
+
+  def insert(self, key, value):
+    # TO DO
+    new = Node((key, value))
+    index = self.__hash_function(key)
+
+    if self.ht[index].value == None:
+      self.ht[index] = new
+   
+    else:
+      head = self.ht[index]
+      prev = head
+      if value >= head.value[1]:
+        new.next = head
+        self.ht[index] = new
+        return 
+
+      else:
+        while head.next:
+          if head.value[1] < value <= head.next.value[1]:
+            print(head.value[1],value,head.next.value[1])
+            new.next = head.next
+            head.next = new
+            return
+          prev = head
+          head = head.next
+
+        if head.value[1] < value:
+          new.next = head
+          prev.next = new
+        else:
+          head.next = new
+
+====================================
+
+task 04
+
+  #Do it by yourself
+  def __hash_function(self, key):
+    #TO DO
+    index = (key + 3) % len(self.ht)
+    return index
+
+
+
+  #Do it by yourself
+  def remove(self, key):
+    #TO DO
+    index = self.__hash_function(key)
+    head = self.ht[index]
+    perv = head
+    if key == head.key:
+      head = head.next
+      self.ht[index] = head
+      
+    else:
+      while head:
+        if key == head.key:
+          prev.next = head.next
+          return
+        prev = head
+        head = head.next
+        
+===============================
