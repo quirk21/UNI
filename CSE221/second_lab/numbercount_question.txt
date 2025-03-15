@@ -1,0 +1,31 @@
+You are given a sorted array a of n elements, and some queries. In each query, you are given a pair [x,y] and you have to count how many numbers ai are there such that x≤ai≤y
+
+For example, if the array is [10,20,20,45,79] and you are given a query [20,50]
+then answer will be 3 because there are in total 3 numbers that's value is between 20 and 50
+
+
+Input
+The first line of the input contains n(1≤n≤105) and q(1≤q≤105) denoting the array size and the number of queries respectively. The next line will contain the array elements separated by space where 1≤ai≤109 where i=0,1,2,…,n−1
+Each of the next q lines will contain a pair [x,y] where 1≤x≤y≤109. See the sample input format for better understanding.
+
+Note1: It is guaranteed that the given array is sorted in non-decreasing order.
+
+Note2: It is also guaranteed that the queries are valid. Which means, for each query [x,y], x≤y
+
+
+Output
+For each query [x,y], output a single integer P denoting the number of elements in the array a such that x≤ai≤y
+
+
+Example
+InputCopy
+5 3
+10 20 20 45 79
+20 50
+5 45
+1 100
+OutputCopy
+3
+4
+5
+
