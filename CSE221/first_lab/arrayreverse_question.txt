@@ -1,0 +1,23 @@
+#question 03
+You are given an array of N integers. Your task is to reverse the array and print the last K integers from the reversed array.
+
+Input
+The first line contains two integers N (1≤N≤106)and K (1≤K≤N) — the number of elements in the array and the value K.
+
+The second line contains N integers separated by spaces a1,a2,a3…an (1≤ai≤106) — the elements of the array.
+
+Output
+Print K space separated integers as described in the statement.
+
+Examples
+InputCopy
+5 3
+5 6 7 8 9
+OutputCopy
+7 6 5 
+InputCopy
+8 5
+20 8 9 3 10 7 100 12
+OutputCopy
+10 3 9 8 20 
+

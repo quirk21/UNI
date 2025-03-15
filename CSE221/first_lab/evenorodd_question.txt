@@ -1,0 +1,24 @@
+#question 01
+Do you know how to tell if a number is Odd or Even? You are given T numbers, and for each of those numbers, you have to tell whether the number is odd or even.
+
+Input
+The first line will contain a single integer T (1≤T≤100). Each of the next Tlines will contain a number N
+(−105≤N≤105).
+
+Output
+For each N, you have to print whether the number is odd or even. Please see the sample input-output format to know what exactly you have to print.
+
+Example
+InputCopy
+5
+10
+19
+7
+3
+100
+OutputCopy
+10 is an Even number.
+19 is an Odd number.
+7 is an Odd number.
+3 is an Odd number.
+100 is an Even number.

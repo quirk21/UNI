@@ -1,0 +1,45 @@
+# question 06
+Suppose you are given a task to rank the students. You have gotten the marks and ID of the students. Now your task is to rank the students based on their marks using a sorting algorithm. If two or more students get the same mark, then students with the lower ID will get prioritized. See the input and output for a better understanding.
+
+However, you have to keep in mind that your sorting algorithms perform the minimum number of swapping operations.
+
+Input
+The first line of the input file will contain an integer N(1≤N≤1000). The second line will contain N integers, representing the Student ID, Si(1≤Si≤1000)
+The next line will contain the N integers, Sm(1≤Sm≤1000), which denotes the obtained mark of the corresponding students.
+
+Note: It is guaranteed that the student IDs are unique. In other words, Si≠Sj if i≠j.
+
+Output
+The first line of the output must contain a number X
+which denotes the number of minimum swaps. The rest of the N
+lines will contain the Student ID and obtained marks sorted based on the instruction above. See the sample output for a better understanding.
+
+Important Note: Since you are asked to minimize the number of swaps, if your number of swaps doesn't match with the judge's answer, your solution will be considered incorrect.
+
+Look at the first sample input. It can be shown that this can be sorted with only 4 swaps. 
+It can also be shown that it is not possible to sort this in less than 4 swaps.
+
+Examples
+InputCopy
+7
+7 4 9 3 2 5 1
+40 50 50 20 10 10 10
+OutputCopy
+Minimum swaps: 4
+ID: 4 Mark: 50
+ID: 9 Mark: 50
+ID: 7 Mark: 40
+ID: 3 Mark: 20
+ID: 1 Mark: 10
+ID: 2 Mark: 10
+ID: 5 Mark: 10
+InputCopy
+4
+7 2 5 3
+80 60 80 50
+OutputCopy
+Minimum swaps: 2
+ID: 5 Mark: 80
+ID: 7 Mark: 80
+ID: 2 Mark: 60
+ID: 3 Mark: 50
