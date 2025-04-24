@@ -1,0 +1,45 @@
+You are given a directed unweighted graph with N
+ nodes and M
+ edges. The nodes are numbered from 1
+ to N
+. The graph contains no self-loops or multiple edges.
+
+Write a code to find if there is any cycle in the graph. In graph theory, a cycle in a graph is a non-empty trail in which only the first and last vertices are equal. [Wikipedia]
+
+Input
+The first line contains four integers N
+ and M
+ (1≤N≤2×105,1≤M≤2×105)
+ — the number of vertices and total number of edges.
+
+The next M
+ lines will contain two integers ui,vi(1≤ui,vi≤N)
+ — denoting there is an edge from city ui
+ to city vi
+.
+
+Output
+Print YES if the graph contains any cycle, otherwise print NO.
+
+Examples
+InputCopy
+4 7
+1 3
+1 2
+2 4
+3 1
+2 3
+4 3
+4 1
+OutputCopy
+YES
+InputCopy
+6 5
+6 4
+6 3
+4 5
+6 2
+4 1
+OutputCopy
+NO
+
