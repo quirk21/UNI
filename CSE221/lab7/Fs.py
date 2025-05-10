@@ -19,6 +19,7 @@ def second_shortest_path(graph: list[list[int]], source: int, destination: int, 
     while minheap:
         curr_dist, curr_node = heapq.heappop(minheap)
         # if we aleready have a shorter path iteration is skipped
+        # we are comparing with the second value
         if curr_dist > dist[curr_node][1]: continue
 
         for nx_dist, nx_node in graph[curr_node]:
