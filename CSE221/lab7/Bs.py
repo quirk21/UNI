@@ -7,7 +7,7 @@ for i in range(M):
     start, end, weight = map(int, sys.stdin.readline().split())
     graph[start].append(( weight,end))
 
-def dijkstra(graph: list[list[int]], source: int, destination: int , node: int) -> tuple[list[int], list[int]]:
+def dijkstra(graph: list[list[int]], source: int, destination: int , node: int) ->  list[int]:
     distance = [float('inf')]*(node+1)
     prev = [-1]*(node+1)
     minheap = []
