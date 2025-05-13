@@ -1,0 +1,36 @@
+You are given a bidirectional weighted graph with N nodes and M edges. The nodes are numbered from 1 to N. The graph contains no self-loops or multiple edges.
+
+Your task is to find the total cost of the second-best Minimum Spanning Tree. If no such tree exists, print −1.
+
+Note: The second-best MST must have a total weight strictly greater than that of the best (minimum) MST.
+
+Input
+The first line contains four integers N,M(2≤N≤10^3,1≤M≤2×10^3) — the number of vertices, total number of edges.
+
+The next M lines will contain three integers ui,vi,wi(1≤ui,vi≤N,1≤wi≤106) — there is an edge between the node ui and the node vi with a weight wi.
+
+Output
+Output the total cost of the second-best Minimum Spanning Tree. If no such tree exists, print −1.
+
+Examples
+InputCopy
+6 7
+1 2 1
+2 3 2
+3 1 3
+1 4 5
+4 5 4
+5 6 5
+6 4 5
+OutputCopy
+18
+InputCopy
+5 5
+1 2 3
+2 3 4
+3 4 5
+4 5 1
+5 1 2
+OutputCopy
+11
+
